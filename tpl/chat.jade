@@ -1,0 +1,13 @@
+!!!
+html
+	head
+		title Node Chat
+		script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+		script(src='/socket.io/socket.io.js')
+		script(src='/js/chat.js')
+	body
+		#conversation(style='width: 500px; height: 300px; margin: 0 0 20px 0; border: solid 1px #999; overflow-y: scroll; float:left;')
+		#users(style='float:right;')
+		.controls
+			input#msg(style='width:350px;')
+			input#chatsend(type='button', value='send')
