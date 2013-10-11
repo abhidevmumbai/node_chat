@@ -1,0 +1,11 @@
+{
+    "name": "NodeChat",
+    "version": "0.0.0",
+    "description": "Node chat",
+    "dependencies": {
+        "socket.io": "latest",
+        "express": "latest",
+        "jade": "latest"
+    },
+    "author": "Abhidev"
+}
