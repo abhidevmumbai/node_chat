@@ -1,0 +1,177 @@
+/*RESET CSS*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*Button css*/
+.btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.4;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+.btn-default {
+	color: #333;
+	background-color: #fff;
+	border: 1px solid #ccc;
+}
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active {
+  color: #333333;
+  background-color: #ebebeb;
+  border-color: #adadad;
+}
+
+.btn-primary {
+	color: #ffffff;
+	background-color: #428bca;
+	border-color: #357ebd;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active{
+	color: #ffffff;
+	background-color: #3276b1;
+	border-color: #285e8e;
+}
+
+/*Colored boxes css*/
+.box-green {
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+.box-green b{
+	color: #468847;
+}
+
+.box-yellow {
+	background-color: #fcf8e3;
+	border-color: #fbeed5;
+}
+.box-yellow b{
+	color: #c09853;
+}
+
+.box-blue {
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+.box-blue b{
+	color: #3a87ad;
+}
+.box {
+	color: #444;
+	padding: 7px;
+	margin-bottom: 5px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+/********************CHAT css********************/
+html, body{
+	height: 100%;
+	font-size: 15px;
+}
+#wrapper{
+	height: 100%;
+    margin:0 auto;
+    overflow:hidden;
+    padding: 15px;
+ }
+ #conversation{
+ 	border: solid 1px #999;
+ 	float:left;
+ 	height: 78%;
+ 	margin: 0 0 1% 0; 
+ 	overflow-y: scroll;
+ 	padding: 1%;
+ 	width: 78%;
+ }
+ #users{
+ 	border: 1px solid #999;
+  	float: right;
+ 	height: 84%;
+ 	margin: 0 0 1% 0;
+ 	overflow-y: scroll;
+ 	width: 19%;
+ }
+ #users div{
+ 	border-top: 1px solid #999;
+ 	width: 94%;
+ 	padding: 5px 3%;
+ }
+ #users div:first-child{
+ 	border: none;
+ }
+ .controls{
+ 	height: 15%;
+ 	width:80%;
+ }
+ .controls input#msg{
+ 	float: left;
+	margin: 0;
+	padding: 8px 1%;
+	width: 86%;
+ }
+
+.controls #chatsend{
+	float: right;
+	margin: 0 0 0 1%;
+	width: 10%;
+}
