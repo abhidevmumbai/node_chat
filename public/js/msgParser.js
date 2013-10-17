@@ -2,7 +2,9 @@ var smileyBaseURL = '/images/smileys/'
 var msgParser = {
     msg: '',
     init: function(text){
-        this.msg = this.smileyParser(text);
+        this.msg = text;
+        this.smileyParser(this.msg);
+        this.linkParser(this.msg);
         return this.msg;
     },
     // regex: /([ \n\r\t]):D|:D([ \n\r\t])|(^):D($)/gm
@@ -162,7 +164,37 @@ var msgParser = {
                 }
             }
         }
-        return text;
+        this.msg = text;
+    },
+
+    linkParser: function(text){
+        /*
+            (
+             ( # brackets covering match for protocol (optional) and domain
+              ([A-Za-z]{3,9}:(?:\/\/)?)   # match protocol, allow in format http:// or mailto:
+              (?:[\-;:&=\+\$,\w]+@)?   # allow something@ for email addresses
+              [A-Za-z0-9\.\-]+   # anything looking at all like a domain, non-unicode domains
+              | # or instead of above
+              (?:www\.|[\-;:&=\+\$,\w]+@) # starting with something@ or www.
+              [A-Za-z0-9\.\-]+   # anything looking at all like a domain
+             )
+             ( # brackets covering match for path, query string and anchor
+              (?:\/[\+~%\/\.\w\-]*)  # allow optional /path
+              ?\??(?:[\-\+=&;%@\.\w]*)  # allow optional query string starting with ? 
+              #?(?:[\.\!\/\\\w]*) # allow optional anchor #anchor 
+             )? # make URL suffix optional
+            )
+        */
+        var regex =  /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-]*)?\??(?:[\-\+=&;%@\.\w]*)#?(?:[\.\!\/\\\w]*))?)/g,
+            urls = text.match(regex),
+            urlLen = urls ? urls.length : 0;
+        if(urlLen > 0){
+            for(var i=0; i<urlLen; i++){
+                console.log(urls[i]);
+                text = text.replace(urls[i], '<a href="' +urls[i]+ '" target="_blank">' +urls[i]+ '</a>');
+            }
+            this.msg = text;
+        }
     }
 
 }
