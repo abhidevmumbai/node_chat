@@ -9,9 +9,14 @@ html
 		script(src='/js/chat.js')
 	body
 		#wrapper
+			include modal.jade
 			#conversation
 			#users
 			.controls
 				input#msg(type='text')
 				button#chatsend.btn.btn-primary(type='button')
 					| send
+				a#showSmileys(href='#')
+					| Smileys
+			.smileys
+				include smileys_set1.jade

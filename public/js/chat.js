@@ -1,4 +1,6 @@
 $('document').ready(function(){
+	var msg = $('#msg');
+
 	var socket = io.connect('http://localhost:3700'),
 		conversation = $('#conversation');
 
@@ -32,21 +34,45 @@ $('document').ready(function(){
 
 		// when the client clicks SEND
 		$('#chatsend').click( function() {
-			var message = $('#msg').val();
+			var message = msg.val();
 			if(message != ''){
 				// tell server to execute 'sendchat' and send along one parameter
 				socket.emit('sendchat', message);
-				$('#msg').val('');
+				msg.val('');
 			}
 		});
 
 		// when the client hits ENTER on their keyboard
-		$('#msg').keypress(function(e) {
+		msg.keypress(function(e) {
 			if(e.which == 13) {
 				$(this).blur();
 				$('#chatsend').click();
-				$('#msg').focus();
+				msg.focus();
 			}
 		});
 
+		$('#showSmileys').bind('click', function(){
+			utils.showModal({'title':'Smileys', 'body': $('.smileys').show()});
+			msg.focus();
+		});
+
+		$('.modal-dialog .close').bind('click', function(){
+			$('.modal-dialog').fadeOut();
+		});
+		$('.smileys li').bind('click', function(){
+			var text = msg.val(),
+				smiley = $(this).data('smiley');
+			msg.focus();
+			text = text + smiley + ' ';
+			msg.val(text);
+		});
 });
+
+var utils = {
+	showModal: function(config){
+		var modal = $('.modal-dialog');
+		modal.find('.modal-title').html(config.title);
+		modal.find('.modal-body').html('').append(config.body);
+		modal.show();
+	}
+}

@@ -92,26 +92,8 @@ table {
 }
 
 /*Colored boxes css*/
-.box-green b{
-	background-color: #dff0d8;
-	border-color: #d6e9c6;
-	color: #468847;
-}
-
-.box-yellow b{
-	background-color: #fcf8e3;
-	border-color: #fbeed5;
-	color: #c09853;
-}
-
-.box-blue b{
-	background-color: #d9edf7;
-	border-color: #bce8f1;
-	color: #3a87ad;
-}
 .box {
 	color: #444;
-	padding: 7px;
 	margin-bottom: 5px;
 	border: 1px solid transparent;
 	border-radius: 4px;
@@ -131,10 +113,87 @@ table {
 	margin: -1px 0 0 0;
 	width: 98%;
 }
+.box-green b{
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+	color: #468847;
+}
+
+.box-yellow b{
+	background-color: #fcf8e3;
+	border-color: #fbeed5;
+	color: #c09853;
+}
+
+.box-blue b{
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+	color: #3a87ad;
+}
+
+/*Modal box*/
+.modal-dialog{ 
+	display: none;
+	height: 400px;
+	left: 10%;
+	position: absolute;
+	top: 10%;
+	width: 80%;
+	z-index: 1;
+}
+.modal-header {
+	min-height: 16.428571429px;
+	padding: 15px;
+	border-bottom: 1px solid #e5e5e5;
+}
+.modal-header .close {
+	margin-top: -2px;
+}
+button.close {
+	padding: 0;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	-webkit-appearance: none;
+}
+.close {
+	float: right;
+	font-size: 21px;
+	font-weight: bold;
+	line-height: 1;
+	color: #000000;
+	text-shadow: 0 1px 0 #ffffff;
+	opacity: 0.2;
+	filter: alpha(opacity=20);
+}
+.modal-content {
+	background-color: #ffffff;
+	border: 1px solid #999999;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 6px;
+	-webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+	position: relative;
+	outline: none;
+}
+.modal-body {
+	height: 220px;
+	overflow-y: scroll;
+	position: relative;
+	padding: 10px 20px;
+}
+.modal-footer {
+	padding: 19px 20px 20px;
+	margin-top: 15px;
+	text-align: right;
+	border-top: 1px solid #e5e5e5;
+}
+
 /********************CHAT css********************/
 html, body{
 	height: 100%;
-	font-size: 15px;
+	font-size: 13px;
+	font-family: arial, verdana;
 }
 #wrapper{
 	height: 100%;
@@ -182,4 +241,25 @@ html, body{
 	float: right;
 	margin: 0 0 0 1%;
 	width: 10%;
+}
+
+.smileys{display: none;}
+.smileys li{
+	border: 1px solid #ccc;
+	float: left;
+	height: 100px;
+	list-style-type: none;
+	margin: 5px;
+	text-align: center;
+	width: 100px;
+}
+.smileys li img{
+	max-height: 75%;
+	width: auto;
+}
+.smileys span:first-child{
+	height: 70%;
+}
+.smileys span{
+	display: block;
 }
