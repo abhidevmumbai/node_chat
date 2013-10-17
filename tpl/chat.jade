@@ -9,14 +9,22 @@ html
 		script(src='/js/chat.js')
 	body
 		#wrapper
+			.left
+				#conversation
+				.controls
+					input#msgInput(type='text')
+					button#chatsend.btn.btn-primary(type='button')
+						| send
+			.right
+				#users
+				ul.btnbar
+					li
+						a#showSmileys(href='#', data-action="showSmileys")
+							img(src='/images/smiley.gif' width='20' height='20')
+					li
+						a#link(href='#', data-action="showLink" data-tag='|URL=|')
+							img(src='/images/link.gif' width='20' height='20')
+					
 			include modal.jade
-			#conversation
-			#users
-			.controls
-				input#msg(type='text')
-				button#chatsend.btn.btn-primary(type='button')
-					| send
-				a#showSmileys(href='#')
-					| Smileys
 			.smileys
 				include smileys_set1.jade

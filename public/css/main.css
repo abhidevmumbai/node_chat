@@ -201,36 +201,16 @@ html, body{
     overflow:hidden;
     padding: 15px;
  }
- #conversation{
- 	border: solid 1px #999;
+
+ .left{
  	float:left;
- 	height: 78%;
- 	margin: 0 0 1% 0; 
- 	overflow-y: scroll;
- 	padding: 1%;
+ 	height: 100%;
  	width: 78%;
- }
- #users{
- 	border: 1px solid #999;
-  	float: right;
- 	height: 84%;
- 	margin: 0 0 1% 0;
- 	overflow-y: scroll;
- 	width: 19%;
- }
- #users div{
- 	border-top: 1px solid #999;
- 	width: 94%;
- 	padding: 5px 3%;
- }
- #users div:first-child{
- 	border: none;
  }
  .controls{
  	height: 15%;
- 	width:80%;
  }
- .controls input#msg{
+ .controls input#msgInput{
  	float: left;
 	margin: 0;
 	padding: 8px 1%;
@@ -243,6 +223,43 @@ html, body{
 	width: 10%;
 }
 
+.right{
+ 	float: right;
+ 	height: 100%;
+ 	width: 19%;
+ }
+#conversation, #users{
+	border: solid 1px #999;
+	height: 78%;
+	margin: 0 0 1% 0; 
+	overflow-y: scroll;
+	padding: 1%;
+}
+#users{
+	margin: 0 0 4% 0;
+	padding: 4% 0;
+}
+#users div{
+	border-top: 1px solid #999;
+	width: 94%;
+	padding: 5px 3%;
+}
+#users div:first-child{
+	border: none;
+}
+
+.btnbar li{ 
+	display: inline-block;
+	margin: 2px;
+}
+.btnbar li a{
+	border: 1px solid #ccc;
+	float: left;
+	padding: 1px;
+}
+.btnbar li a:hover{
+	border: 1px solid #428bca;
+}
 .smileys{display: none;}
 .smileys li{
 	border: 1px solid #ccc;
