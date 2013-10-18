@@ -199,23 +199,23 @@ html, body{
 	height: 100%;
     margin:0 auto;
     overflow:hidden;
-    padding: 15px;
- }
+    padding: 5px;
+}
 
- .left{
+.left{
  	float:left;
  	height: 100%;
  	width: 78%;
- }
- .controls{
+}
+.controls{
  	height: 15%;
- }
- .controls input#msgInput{
+}
+.controls input#msgInput{
  	float: left;
 	margin: 0;
 	padding: 8px 1%;
 	width: 86%;
- }
+}
 
 .controls #chatsend{
 	float: right;
@@ -226,14 +226,14 @@ html, body{
 .right{
  	float: right;
  	height: 100%;
- 	width: 19%;
+ 	width: 21%;
  }
 #conversation, #users{
 	border: solid 1px #999;
 	height: 78%;
 	margin: 0 0 1% 0; 
-	overflow-y: scroll;
-	padding: 1%;
+	overflow-y: auto;
+	padding: 1% 10px;
 }
 #users{
 	margin: 0 0 4% 0;
@@ -279,4 +279,20 @@ html, body{
 }
 .smileys span{
 	display: block;
+}
+
+/*Mediq queries*/
+@media screen and (max-width: 768px){
+	.controls input#msgInput{
+		padding: 2% 4%;
+		width: 90%;
+	}
+
+	.controls #chatsend{
+		margin: 1% 0 0 0;
+		padding: 10px 0;
+		width: 100%;
+	}
+
+
 }

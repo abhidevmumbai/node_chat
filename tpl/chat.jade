@@ -2,6 +2,7 @@
 html
 	head
 		title Node Chat
+		meta(name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width, target-densitydpi = device-dpi")
 		link(href='/css/main.css' type='text/css' rel='stylesheet')
 		script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
 		script(src='/socket.io/socket.io.js')
@@ -21,9 +22,10 @@ html
 					li
 						a#showSmileys(href='#', data-action="showSmileys")
 							img(src='/images/smiley.gif' width='20' height='20')
-					li
-						a#link(href='#', data-action="showLink" data-tag='|URL=|')
-							img(src='/images/link.gif' width='20' height='20')
+					//
+						li
+							a#link(href='#', data-action="showLink" data-tag='|URL=|')
+								img(src='/images/link.gif' width='20' height='20')
 					
 			include modal.jade
 			.smileys

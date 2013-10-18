@@ -1,7 +1,7 @@
 $('document').ready(function(){
 	var msgInput = $('#msgInput');
 
-	var socket = io.connect('http://localhost:3700'),
+	var socket = io.connect('http://192.168.1.106:3700'),
 		conversation = $('#conversation');
 
 	// on connection to server, ask for user's name with an anonymous callback
@@ -62,8 +62,6 @@ $('document').ready(function(){
 				utils.appendToMsg(tag);
 				break;
 		}
-		
-		msgInput.focus();
 	});
 
 	$('.modal-dialog .close').bind('click', function(){
@@ -85,12 +83,12 @@ var utils = {
 	},
 	hideModal: function(){
 		$('.modal-dialog').fadeOut();
+		msgInput.focus();
 	},
 	/*Method to append anything to the msg box text*/
 	appendToMsg: function(text){
 		var msgInput = $('#msgInput');
 		var message = msgInput.val();
-			msgInput.focus();
 			message = message + text;
 			msgInput.val(message);
 	}
